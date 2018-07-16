@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from "../view/button.jsx"
 import ReactDOM from "react-dom";
 import dashboardRoutes from "../../routes/dashboard";
 import { Switch, Route, Redirect } from "react-router-dom";
@@ -16,10 +17,26 @@ class DashboardContainer extends Component {
 
   constructor() {
     super();
+    this.state = {
+      'yellowBtn' : {'type':'yellow','size':'tiny', 'text':'Yellow'},
+      'primary' : {'type':'primary', 'text':'Primary'}
+    }
   }
 
   render() {
-        return (<p>Works</p>)
+        
+        const {yellowBtn, primary} = this.state
+        return (
+          <div className="ui two column grid">
+            <div className="three wide column">
+            </div>
+            <div className="nine wide column">
+            <div className="ui divider"></div>
+              <Button props = {yellowBtn} />
+              <Button props = {primary} />
+            </div>
+          </div>
+        )
   }
 }
 
