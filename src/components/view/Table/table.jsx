@@ -19,13 +19,13 @@ function Table({ props }) {
 
   return (
     <table className={btnClasses}>
-      <tr>
-        <thead>
+      <thead>
+        <tr>
           {headers.map((v, k) => {
             return <Header value={v} />;
           })}
-        </thead>
-      </tr>
+        </tr>
+      </thead>
       <tbody>
         {data.map((v, k) => {
           return <Row values={v} />;

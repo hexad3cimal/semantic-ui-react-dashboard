@@ -31,7 +31,7 @@ describe("Component", () => {
     expect(rows.length).toBe(7);
   });
 
-  it("table columns rendered", async () => {
+  it("table columns rendered", () => {
     const wrapper = getComponent();
     expect(
       wrapper

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Button from "../view/button.jsx";
 import Table from "../view/Table/table.jsx";
+import Input from "../view/Input/input.jsx";
 import ReactDOM from "react-dom";
 import dashboardRoutes from "../../routes/dashboard";
 import { Switch, Route, Redirect } from "react-router-dom";
@@ -40,12 +41,42 @@ class DashboardContainer extends Component {
           ["Mason Porter", "Chile", "Gloucester", "$78,615"]
         ],
         headers: ["Name", "Country", "City", "Salary"]
+      },
+      basicInput: { type: "text", placeholder: "Basic input..." },
+      labeledInput: {
+        type: "text",
+        placeholder: "Basic input...",
+        label: "Label"
+      },
+      cornerInput: {
+        type: "text",
+        placeholder: "Input...",
+        corner: true,
+        label: true,
+        iconName: "search"
+      },
+      searchInput: {
+        type: "text",
+        placeholder: "Input...",
+        label: "Search",
+        iconName: "search",
+        icon: true
       }
     };
   }
 
   render() {
-    const { yellowBtn, primary, icon, labeledIcon, table } = this.state;
+    const {
+      yellowBtn,
+      primary,
+      icon,
+      labeledIcon,
+      table,
+      basicInput,
+      labeledInput,
+      cornerInput,
+      searchInput
+    } = this.state;
     return (
       <div className="ui two column grid">
         <div className="three wide column" />
@@ -60,6 +91,22 @@ class DashboardContainer extends Component {
           <h1>Table</h1>
           <div className="ui two column relaxed grid">
             <Table props={table} />
+          </div>
+          <div className="ui divider" />
+          <h1>Input</h1>
+          <div className="ui two column grid">
+            <div className="column">
+              <Input props={basicInput} />
+            </div>
+            <div className="column">
+              <Input props={labeledInput} />
+            </div>
+            <div className="column">
+              <Input props={cornerInput} />
+            </div>
+            <div className="column">
+              <Input props={searchInput} />
+            </div>
           </div>
         </div>
       </div>
