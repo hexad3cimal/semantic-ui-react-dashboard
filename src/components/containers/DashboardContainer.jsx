@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import Button from "../view/button.jsx";
+import Button from "../view/button/button.jsx";
 import Table from "../view/Table/table.jsx";
 import Input from "../view/Input/input.jsx";
+import BasicCard from "../view/cards/basiccard.jsx";
 import ReactDOM from "react-dom";
 import dashboardRoutes from "../../routes/dashboard";
 import { Switch, Route, Redirect } from "react-router-dom";
@@ -61,6 +62,15 @@ class DashboardContainer extends Component {
         label: "Search",
         iconName: "search",
         icon: true
+      },
+      basicCard: {
+        contentHeader: "Test",
+        image: true,
+        content: true,
+        dimmable: true,
+        imageContent: "Test content",
+        contentMeta: "Test meta",
+        contentDesc: "Test desc"
       }
     };
   }
@@ -75,7 +85,8 @@ class DashboardContainer extends Component {
       basicInput,
       labeledInput,
       cornerInput,
-      searchInput
+      searchInput,
+      basicCard
     } = this.state;
     return (
       <div className="ui two column grid">
@@ -108,6 +119,9 @@ class DashboardContainer extends Component {
               <Input props={searchInput} />
             </div>
           </div>
+          <div className="ui divider" />
+          <h1>Cards</h1>
+          <BasicCard props={basicCard} />
         </div>
       </div>
     );
