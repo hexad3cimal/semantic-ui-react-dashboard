@@ -70,7 +70,8 @@ class DashboardContainer extends Component {
         dimmable: true,
         imageContent: "Test content",
         contentMeta: "Test meta",
-        contentDesc: "Test desc"
+        contentDesc:
+          "One or two sentence description that may go to several lines"
       }
     };
   }
