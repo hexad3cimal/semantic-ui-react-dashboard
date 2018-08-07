@@ -4,4 +4,10 @@ ReactJS and Semantic UI based dashboard.
 
 #Components Implemented
 
-Button, Basic Cards, Inputs
+<> Button
+
+<> Basic Cards
+
+<> Inputs
+
+<> Table
